@@ -1,0 +1,22 @@
+@use './vars';
+
+@mixin row(){
+    display: flex;
+    align-items: center;
+}
+
+@mixin set-card-shape($clr-1, $clr-2){
+    background: $clr-1;
+    background: linear-gradient(150deg, $clr-1 0%, $clr-2 100%);
+    border-radius: vars.$r-1;
+    box-shadow: -8px 6px 32px 0px rgba(0,0,0,0.37);
+    -webkit-box-shadow: -8px 6px 32px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: -8px 6px 32px 0px rgba(0,0,0,0.37);
+}
+
+@mixin set-font($size, $weight : vars.$fw-med, $ff : vars.$sf){
+    font-family: $ff;
+    font-size: $size;
+    font-weight: $weight;
+    text-decoration: none;
+}

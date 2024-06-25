@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/ico" href="./imgs/favicon.ico"/>
+    <title>Weather CR</title>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Google Fonts-->
+
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Font Awesome CDN-->
+
+
+    <!--Css Stylesheet-->
+    <link rel="stylesheet" href="./css/homepage.css">
+    <!--Css Stylesheet-->
+
+</head>
+<body>
+    <div class="colors-bar">
+        <div class="clr-1"></div>
+        <div class="clr-2"></div>
+        <div class="clr-3"></div>
+        <div class="clr-4"></div>
+        <div class="clr-5"></div>
+        <div class="clr-6"></div>
+    </div>
+
+    <section id="app" class="container">
+        <div class="container-logo">
+            <img class="image" src="./imgs/logo.png" alt="logo">
+            <h1 class="title">Weather</h1>
+            <h2 class="sub-title">Costa rica</h2>
+        </div>
+
+        <div class="card-container">
+            <province-card v-for="province in provinces" :color="province.color" :img="province.img" :icon="province.icon" :name="province.name" :weather="province.weather" :temperature="province.temperature" :rain="province.rain" :wind="province.wind" :time="province.time" :fl="province.fl" :uv="province.uv"></province-card>
+        </div>    
+    </section>
+    
+
+    <!--Vue JS-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <!--Vue JS-->
+
+    <!--Axios JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--Axios JS-->
+
+    <!--Main JS-->
+    <script src="./js/component.js"></script>
+    <script src="./js/components/ProvinceCard.js"></script>
+    <!--Main JS-->
+
+    <!--Mounted App-->
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
+    <!--Mounted App-->
+</body>
+</html>

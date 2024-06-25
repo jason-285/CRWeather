@@ -1,0 +1,78 @@
+@use './abstracts/vars';
+@use './abstracts/mixins';
+@use './base/base';
+@use './components/card';
+//@import url(../vendor/normalize.css);
+
+.colors-bar{
+    @include mixins.row();
+    width: 100%;
+
+    .clr-1{
+        width: 100%;
+        background: vars.$blue-l;
+        min-height: vars.$s-1;
+    }
+    .clr-2{
+        width: 100%;
+        background: vars.$yellow-l;
+        min-height: vars.$s-1;
+    }
+    .clr-3{
+        width: 100%;
+        background: vars.$orange-l;
+        min-height: vars.$s-1;
+    }
+    .clr-4{
+        width: 100%;
+        background: vars.$red-l;
+        min-height: vars.$s-1;
+    }
+    .clr-5{
+        width: 100%;
+        background: vars.$wine-l;
+        min-height: vars.$s-1;
+    }
+    .clr-6{
+        width: 100%;
+        background: vars.$blood-l;
+        min-height: vars.$s-1;
+    }
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container-logo{
+    @include mixins.row();
+    flex-direction: column;
+    align-content: center;
+    padding-bottom: vars.$p-2;
+}
+
+.image{
+    width: 40%;
+    height: auto;
+    margin-top: vars.$m-2;
+}
+
+.title{
+    @include mixins.set-font(vars.$fs-xlg, vars.$fw-sem, vars.$pf);
+    margin: 0;
+}
+
+.sub-title{
+    @include mixins.set-font(vars.$fs-med, vars.$fw-lig, vars.$pf);
+    margin: 0;
+}
+
+.card-container{
+    @include mixins.row();
+    flex-direction: column;
+    align-content: center;
+    padding: vars.$p-3;
+    gap: vars.$g-2;
+} 

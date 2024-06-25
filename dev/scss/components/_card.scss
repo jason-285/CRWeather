@@ -1,0 +1,93 @@
+@use './abstracts/vars';
+@use './abstracts/mixins';
+
+.card{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 190px;//Consulta
+} 
+
+.card-deco{
+    position: absolute;
+    right: -2rem;
+    top: -2rem;
+    z-index: 1;
+    width: 88%;
+    height: auto;
+}
+
+.card-body{
+    position: absolute;
+    z-index: 1;
+    padding: vars.$p-3;
+    width: 86%; //Consulta
+    min-height: 142px; //Consulta
+}
+
+.top-row{
+    @include mixins.row();
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.state-container{
+    @include mixins.row();
+}
+
+.state-icon{
+    width: 35px;
+    height: auto;
+}
+
+.temperature{
+    @include mixins.set-font(vars.$fs-xxlg);
+}
+
+.data-container{
+    @include mixins.row();
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.time{
+    @include mixins.set-font(vars.$fs-lg);
+}
+
+.bottom-row{
+    @include mixins.row();
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.stats-container{
+    @include mixins.row();
+    gap: vars.$g-3;
+}
+
+.stats-data{
+    @include mixins.row();
+    gap: vars.$g-1;
+}
+
+//Card clases by temperature
+.cold{
+    @include mixins.set-card-shape(vars.$blue-l, vars.$blue-d);
+}
+.tempered{
+    @include mixins.set-card-shape(vars.$yellow-l, vars.$yellow-d);
+}
+.warm{
+    @include mixins.set-card-shape(vars.$orange-l, vars.$orange-d);
+}
+.hot{
+    @include mixins.set-card-shape(vars.$red-l, vars.$red-d);
+}
+.boiling{
+    @include mixins.set-card-shape(vars.$wine-l, vars.$wine-d);
+}
+.infernal{
+    @include mixins.set-card-shape(vars.$blood-l, vars.$blood-d);
+}

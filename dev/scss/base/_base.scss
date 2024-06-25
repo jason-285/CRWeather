@@ -1,0 +1,13 @@
+@use '../abstracts/vars';
+
+body{
+    font-family: vars.$sf;
+    color: vars.$white;
+    background: vars.$black;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+p{
+    margin: 0;
+}
